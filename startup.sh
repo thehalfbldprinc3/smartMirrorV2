@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 SRC=$HOME'/smartMirrorV2'
 /usr/bin/firefox --new-window --kiosk $SRC/display/index.html
 sleep 3
