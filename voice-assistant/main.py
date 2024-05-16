@@ -1,33 +1,17 @@
-import speech_recognition as sr
+#import speech_recognition as sr
 #import pyttsx3
 import requests
 import datetime
 import random
 import json
 import subprocess
+import sr
 
 #from gtts import gTTS
 #from gtts import gTTS
 #from io import BytesIO
 #from pydub import AudioSegment
 #from pydub.playback import play
-
-global_json_data=""
-
-def speech(arg):
-    mp3_fp = BytesIO()
-    tts = gTTS(arg, lang='en')
-    tts.write_to_fp(mp3_fp)
-
-    # Rewind the BytesIO object
-    mp3_fp.seek(0)
-
-    # Load MP3 data into AudioSegment
-    audio_segment = AudioSegment.from_mp3(mp3_fp)
-
-    # Play the audio
-    play(audio_segment)
-
 
 
 greetings = ["Hello! How can I assist you?",
@@ -38,10 +22,7 @@ greetings = ["Hello! How can I assist you?",
 
 def get_output(string): 
     subprocess.run(["/home/mirror/smartMirrorV2/voice-assistant/tts.sh",string],shell=False)
-
-def get_audio():
-    subprocess.run(["/home/mirror/smartMirrorV2/voice-assistant/stt.sh"])
-
+ 
 
 def load_events():
     try:
@@ -65,7 +46,7 @@ def get_event_title():
         #speak(engine, "Please say the title of the event.")
         #speech("Please say the title of the event")
         get_output("Please say the title of the event")
-        title = get_audio()
+        title = sr.get_audio()
         if title:
             return title
         else:
@@ -76,7 +57,7 @@ def get_event_date():
 #        speak(engine, "Please say the date of the event.")
 #        speech("Please say the date of the event")
         get_output("Please say the date of the event")
-        date = get_audio()
+        date = sr.get_audio()
         if date:
             return date
         else:
@@ -177,10 +158,10 @@ def main():
     get_output(greeting)    
 
     # Load events from file
-#    events_dict = load_events()
-'''    
+    events_dict = load_events()
+    
     while True:
-        query = get_audio()
+        query = sr.get_audio()
         if query:
             if "exit" in query:
                 # Save events to file before exiting
@@ -197,10 +178,13 @@ def main():
 #            print(response)
             get_output(response)
 #            speak(engine, response)
-'''    
+ 
 if __name__ == "__main__": 
     while True:
         if main():
             continue
         else:
+            stream.stop_stream()
+            stream.close()
+            audio.terminate()
             break
