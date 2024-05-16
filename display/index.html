@@ -120,9 +120,42 @@
         transform: translateY(-25.5%);
         background: linear-gradient(transparent 15px, #fff 15px, #fff 30px, transparent 30px, transparent 45px, #fff 45px);
     }
+
+    div.intro {
+	    position: absolute;
+	    top: 0;
+	    background: black;
+	    left: 0;
+	    overflow: hidden;
+	    height: 100vh;
+	    width: 100%;
+	    z-index: 100;
+	    display: grid;
+	    place-items: center;
+	    animation: animate-fade-out 1s linear forwards;
+	    animation-delay: 2s;
+	    opacity: 1;
+
+	    > div.text {
+		    color: #fff;
+		    font-size: 2em;
+	    }
+    }
+
+    @keyframes animate-fade-out {
+	    0% {
+		    opacity: 1;
+	    }
+	    100% {
+		    opacity: 0;
+	    }
+    }
 </style>
 </head>
 <body>
+	<div class="intro">
+		<div class="text">Heartly welcome to NBA Expert Team</div>
+	</div>
   <!-- <div class="clock">
     <iframe src="./clock/clock.html" frameborder="0" height="150px" width="450px"></iframe>
   </div> -->
