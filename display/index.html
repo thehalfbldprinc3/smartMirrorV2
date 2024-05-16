@@ -10,6 +10,15 @@
     {
         box-sizing: border-box;
         font-family: sans-serif;
+	cursor: none;
+    }
+
+    html,body {
+	    overflow: hidden;
+    }
+
+    div.intro {
+	    pointer-events: none;
     }
     
     body
@@ -19,8 +28,8 @@
         display: grid;
         grid-template-columns: 2fr 5fr 1fr;
         row-gap: 2em;
-        grid-template-rows: 200px auto 50px;
-        grid-template-areas: "clock empty weather" "clock empty weather" "nav nav nav";
+        grid-template-rows: 100px auto 50px;
+        grid-template-areas: "bpit empty iic" "clock empty weather" "nav nav nav";
         min-height: 100vh;
         width: 100%;
     }
@@ -150,11 +159,41 @@
 		    opacity: 0;
 	    }
     }
+
+    div.bpit-logo {
+	    grid-area: bpit;
+	    z-index: 110;
+
+
+	    > img {
+		    height: 100%;
+		    object-fit: contain;
+	    }
+
+    }
+
+    div.iic-logo {
+	    grid-area: iic;
+	    z-index: 110;
+	    position: relative;
+	    > img {
+		    position: absolute;
+		    right: 0;
+		    height: 100%;
+		    object-fit: contain;
+	    }
+    }
 </style>
 </head>
 <body>
 	<div class="intro">
 		<div class="text">Heartly welcome to NBA Expert Team</div>
+	</div>
+	<div class="bpit-logo">
+		<img src="../bpit-logo.jpg">
+	</div>
+	<div class="iic-logo">
+		<img src="../iic.jpg">
 	</div>
   <!-- <div class="clock">
     <iframe src="./clock/clock.html" frameborder="0" height="150px" width="450px"></iframe>

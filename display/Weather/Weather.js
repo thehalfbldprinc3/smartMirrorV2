@@ -1,6 +1,7 @@
 function getWeather() {
   const apiKey = '3ed3625376c65ae31fb416c1f5c76e6f';
-  const city = document.getElementById('city').value;
+  // const city = document.getElementById('city').value;
+  const city = "Delhi";
 
   if (!city) {
       alert('Please enter a city');
@@ -23,7 +24,7 @@ function getWeather() {
   fetch(forecastUrl)
       .then(response => response.json())
       .then(data => {
-          displayHourlyForecast(data.list);
+          // displayHourlyForecast(data.list);
       })
       .catch(error => {
           console.error('Error fetching hourly forecast data:', error);
@@ -35,11 +36,11 @@ function displayWeather(data) {
   const tempDivInfo = document.getElementById('temp-div');
   const weatherInfoDiv = document.getElementById('weather-info');
   const weatherIcon = document.getElementById('weather-icon');
-  const hourlyForecastDiv = document.getElementById('hourly-forecast');
+  // const hourlyForecastDiv = document.getElementById('hourly-forecast');
 
   // Clear previous content
   weatherInfoDiv.innerHTML = '';
-  hourlyForecastDiv.innerHTML = '';
+  // hourlyForecastDiv.innerHTML = '';
   tempDivInfo.innerHTML = '';
 
   if (data.cod === '404') {
@@ -97,3 +98,5 @@ function showImage() {
   const weatherIcon = document.getElementById('weather-icon');
   weatherIcon.style.display = 'block'; // Make the image visible once it's loaded
 }
+
+getWeather();
