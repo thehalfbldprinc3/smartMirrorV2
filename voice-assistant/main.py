@@ -34,21 +34,14 @@ greetings = ["Hello! How can I assist you?",
              "Hey! How may I help you?",
              "Greetings! What do you need assistance with?"]
 
-'''
-def initialize_engine():
-    engine = pyttsx3.init(driverName='espeak')
-    voiceRate = 150
-    voiceVol = 1.0
-    voices = engine.getProperty('voices')
 
-    engine.setProperty('volume', voiceVol)
-    engine.setProperty('rate',voiceRate)
-    return engine
+def get_output(string):
+    
+    json_dict = { 'text':string }
+    json_obj = json.dumps(json_dict)
+    with open("output.json","w") as outfile:
+        outfile.write(json_obj)
 
-def speak(engine, text):
-    engine.say(text)
-    engine.runAndWait()
-'''
 
 def get_audio():
     recognizer = sr.Recognizer()
@@ -84,22 +77,24 @@ def save_events(events_dict):
 def get_event_title():
     while True:
         #speak(engine, "Please say the title of the event.")
-        speech("Please say the title of the event")
+        #speech("Please say the title of the event")
+        get_output("Please say the title of the event")
         title = get_audio()
         if title:
             return title
         else:
-            speech( "Sorry, I didn't catch that. Please try again.")
+            get_output( "Sorry, I didn't catch that. Please try again.")
 
 def get_event_date():
     while True:
 #        speak(engine, "Please say the date of the event.")
-        speech("Please say the date of the event")
+#        speech("Please say the date of the event")
+        get_output("Please say the date of the event")
         date = get_audio()
         if date:
             return date
         else:
-            speech("Sorry, I didn't catch that. Please try again.")
+            get_output("Sorry, I didn't catch that. Please try again.")
 
 def store_event(event_title, event_date, events_dict):
     events_dict[event_title] = event_date
@@ -175,13 +170,15 @@ def handle_query(query, events_dict):
         return self_description()
     elif "store event" in query:
 #        speak(engine, "Sure, let's store the event.")
-        speech("Sure, let's store the event.")
+#        speech("Sure, let's store the event.")
+        get_output("Sure, let's store the event.")
         event_title = get_event_title()
         event_date = get_event_date()
         return store_event(event_title, event_date, events_dict)
     elif "get event" in query:
         #speak(engine, "Sure, let's retrieve the event.")
-        speech("Sure, let's retrieve the event")
+        #speech("Sure, let's retrieve the event")
+        get_output("Sure let's retrive the event.")
         event_title = get_event_title()
         return get_event(event_title, events_dict)
     else:
@@ -191,7 +188,7 @@ def main():
 #    engine = initialize_engine()
     greeting = random.choice(greetings)
 #    speak(engine, greeting)   
-    speech(greeting)    
+    get_output(greeting)    
 
     # Load events from file
     events_dict = load_events()
@@ -202,17 +199,17 @@ def main():
             if "exit" in query:
                 # Save events to file before exiting
                 save_events(events_dict)
-                speech("Goodbye!")
+                get_output("Goodbye!")
                 return False
 
             if "restart" in query: 
                 save_events(events_dict)
-                speech("Restarting E-bulletin board")
+                get_output("Restarting E-bulletin board")
                 return True
 
             response = handle_query(query, events_dict)
 #            print(response)
-            speech(response)
+            get_output(response)
 #            speak(engine, response)
     
 if __name__ == "__main__": 

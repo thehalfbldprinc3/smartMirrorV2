@@ -15,4 +15,6 @@ clint
 datetime
 gtts
 pydub
-
+piper-tts
+setuptools-rust
+build
