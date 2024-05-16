@@ -4,16 +4,17 @@ import requests
 import datetime
 import random
 import json
+import subprocess
 
-from gtts import gTTS
-from gtts import gTTS
-from io import BytesIO
-from pydub import AudioSegment
-from pydub.playback import play
+#from gtts import gTTS
+#from gtts import gTTS
+#from io import BytesIO
+#from pydub import AudioSegment
+#from pydub.playback import play
 
+global_json_data=""
 
 def speech(arg):
-
     mp3_fp = BytesIO()
     tts = gTTS(arg, lang='en')
     tts.write_to_fp(mp3_fp)
@@ -35,27 +36,12 @@ greetings = ["Hello! How can I assist you?",
              "Greetings! What do you need assistance with?"]
 
 
-def get_output(string):
-    
-    json_dict = { 'text':string }
-    json_obj = json.dumps(json_dict)
-    with open("output.json","w") as outfile:
-        outfile.write(json_obj)
-
+def get_output(string): 
+    subprocess.run(["/home/mirror/smartMirrorV2/voice-assistant/tts.sh",string],shell=False)
 
 def get_audio():
-    recognizer = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("Listening...")
-        audio = recognizer.listen(source)
-        try:
-            print("Recognizing...")
-            query = recognizer.recognize_google(audio, language='en-in')
-            print(f"User said: {query}")
-            return query.lower()
-        except Exception as e:
-            print(e)
-            return ""
+    subprocess.run(["/home/mirror/smartMirrorV2/voice-assistant/stt.sh"])
+
 
 def load_events():
     try:
@@ -191,8 +177,8 @@ def main():
     get_output(greeting)    
 
     # Load events from file
-    events_dict = load_events()
-    
+#    events_dict = load_events()
+'''    
     while True:
         query = get_audio()
         if query:
@@ -211,7 +197,7 @@ def main():
 #            print(response)
             get_output(response)
 #            speak(engine, response)
-    
+'''    
 if __name__ == "__main__": 
     while True:
         if main():
