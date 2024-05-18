@@ -1,4 +1,4 @@
 #!/bin/bash
-
-echo $* | piper --model en_US-lessac-medium.onnx --output-raw | \
+echo $* | piper --model /home/ubie/smartMirrorV2/voice-assistant/en_US-lessac-low.onnx --output-raw | \
   aplay -r 22050 -f S16_LE -t raw -
+

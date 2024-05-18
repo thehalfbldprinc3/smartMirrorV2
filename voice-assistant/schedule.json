@@ -1,0 +1,59 @@
+{
+  "week": {
+    "Monday": {
+      "09:30 - 10:15": {"index": 1, "lecture": "AE", "lecturer": "Dr Preeti Singh"},
+      "10:15 - 11:00": {"index": 2, "lecture": "MPMC", "lecturer": "Professor Rajiv Sharma"},
+      "11:00 - 11:45": {"index": 3, "lecture": "PSLP Lab", "lecturer": "Dr Divya Jindal"},
+      "11:45 - 12:30": {"index": 4, "lecture": "PSLP Lab", "lecturer": "Dr Divya Jindal"},
+      "12:30 - 01:00": {"lecture": "Lunch Break"},
+      "01:00 - 01:45": {"index": 5, "lecture": "PSLP", "lecturer": "Dr Muskan Kapoor"},
+      "01:45 - 02:30": {"index": 6, "lecture": "EMFT", "lecturer": "Dr Shikha Gupta"},
+      "02:30 - 03:15": {"index": 7, "lecture": "NAS", "lecturer": "Dr Sanjay Upreti"},
+      "03:15 - 04:00": {"index": 8, "lecture": "MMM", "lecturer": "N/A"}
+    },
+    "Tuesday": {
+      "09:30 - 10:15": {"index": 1, "lecture": "EMFT", "lecturer": "Dr Shikha Gupta"},
+      "10:15 - 11:00": {"index": 2, "lecture": "NAS", "lecturer": "Dr Sanjay Upreti"},
+      "11:00 - 11:45": {"index": 3, "lecture": "MPMC", "lecturer": "Professor Rajiv Sharma"},
+      "11:45 - 12:30": {"index": 4, "lecture": "AE", "lecturer": "Dr Preeti Singh"},
+      "12:30 - 01:00": {"lecture": "Lunch Break"},
+      "01:00 - 01:45": {"index": 5, "lecture": "AE 2 Lab", "lecturer": "Dr Preeti Singh"},
+      "01:45 - 02:30": {"index": 6, "lecture": "AE 2 Lab", "lecturer": "Dr Preeti Singh"},
+      "02:30 - 03:15": {"index": 7, "lecture": "CCA", "lecturer": "N/A"},
+      "03:15 - 04:00": {"index": 8, "lecture": "CCA", "lecturer": "N/A"}
+    },
+    "Wednesday": {
+      "09:30 - 10:15": {"index": 1, "lecture": "NAS", "lecturer": "Dr Sanjay Upreti"},
+      "10:15 - 11:00": {"index": 2, "lecture": "PSLP", "lecturer": "Dr Muskan Kapoor"},
+      "11:00 - 11:45": {"index": 3, "lecture": "MPMC", "lecturer": "Professor Rajiv Sharma"},
+      "11:45 - 12:30": {"index": 4, "lecture": "DC", "lecturer": "Mr Risheek Kumar"},
+      "12:30 - 01:00": {"lecture": "Lunch Break"},
+      "01:00 - 01:45": {"index": 5, "lecture": "DC Lab", "lecturer": "Mr Risheek Kumar"},
+      "01:45 - 02:30": {"index": 6, "lecture": "DC Lab", "lecturer": "Mr Risheek Kumar"},
+      "02:30 - 03:15": {"index": 7, "lecture": "LIB", "lecturer": "N/A"},
+      "03:15 - 04:00": {"index": 8, "lecture": "LIB", "lecturer": "N/A"}
+    },
+    "Thursday": {
+      "09:30 - 10:15": {"index": 1, "lecture": "DC", "lecturer": "Mr Risheek Kumar"},
+      "10:15 - 11:00": {"index": 2, "lecture": "PSLP", "lecturer": "Dr Muskan Kapoor"},
+      "11:00 - 11:45": {"index": 3, "lecture": "AE", "lecturer": "Dr Preeti Singh"},
+      "11:45 - 12:30": {"index": 4, "lecture": "TW", "lecturer": "Dr Reema Chaudhary"},
+      "12:30 - 01:00": {"lecture": "Lunch Break"},
+      "01:00 - 01:45": {"index": 5, "lecture": "MPMC Lab", "lecturer": "Professor Rajiv Sharma"},
+      "01:45 - 02:30": {"index": 6, "lecture": "MPMC Lab", "lecturer": "Professor Rajiv Sharma"},
+      "02:30 - 03:15": {"index": 7, "lecture": "TNP", "lecturer": "N/A"},
+      "03:15 - 04:00": {"index": 8, "lecture": "TNP", "lecturer": "N/A"}
+    },
+    "Friday": {
+      "09:30 - 10:15": {"index": 1, "lecture": "TW", "lecturer": "Dr Reema Chaudhary"},
+      "10:15 - 11:00": {"index": 2, "lecture": "PSLP", "lecturer": "Dr Muskan Kapoor"},
+      "11:00 - 11:45": {"index": 3, "lecture": "EMFT", "lecturer": "Dr Shikha Gupta"},
+      "11:45 - 12:30": {"index": 4, "lecture": "DC", "lecturer": "Mr Risheek Kumar"},
+      "12:30 - 01:00": {"lecture": "Lunch Break"},
+      "01:00 - 01:45": {"index": 5, "lecture": "NAS Lab", "lecturer": "Dr Sanjay Upreti"},
+      "01:45 - 02:30": {"index": 6, "lecture": "NAS Lab", "lecturer": "Dr Sanjay Upreti"},
+      "02:30 - 03:15": {"index": 7, "lecture": "TNP", "lecturer": "N/A"},
+      "03:15 - 04:00": {"index": 8, "lecture": "TNP", "lecturer": "N/A"}
+    }
+  }
+}
