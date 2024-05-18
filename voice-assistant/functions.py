@@ -1,22 +1,14 @@
 import json
-#import speech_recognition as sr    
-#import pyttsx3    
 import requests    
 import datetime    
 import random    
 import json    
 import subprocess    
 
-import wave
-import sys
 import pyaudio
-
-#from scipy.io import wavfile
-#import noisereduce as nr
 
 import sounddevice as sd
 from scipy.io.wavfile import write
-#from vosk import Model, KaldiRecognizer
 import wave
 import json
 import numpy as np
